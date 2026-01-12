@@ -59,7 +59,7 @@
                     <form class="excel" method="POST" action="{{ route('banner.store') }}" enctype="multipart/form-data">
                         @csrf
 
-                        <div class="row form-section">  
+                        <div class="row form-section">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="title">Title</label>

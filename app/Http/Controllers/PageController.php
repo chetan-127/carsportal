@@ -26,4 +26,3 @@ class PageController extends Controller
         ]);
     }
 }
-

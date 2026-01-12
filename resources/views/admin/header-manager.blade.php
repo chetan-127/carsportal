@@ -7,7 +7,11 @@
         @include('master.navbar')
 
         <style>
-            .mt-4, .my-4 { margin-top: 5.5rem !important; }
+            .mt-4,
+            .my-4 {
+                margin-top: 5.5rem !important;
+            }
+
             .add-btn {
                 position: absolute;
                 right: 15px;
@@ -19,9 +23,9 @@
 
             {{-- Success Message --}}
             @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
             @endif
 
             <div class="card">
@@ -50,55 +54,55 @@
 
                             <tbody>
                                 @forelse($menus as $key => $menu)
-                                    <tr>
-                                        <td>{{ $key + 1 }}</td>
+                                <tr>
+                                    <td>{{ $key + 1 }}</td>
 
-                                        <td>{{ $menu->title }}</td>
+                                    <td>{{ $menu->title }}</td>
 
-                                        <td>{{ $menu->label ?? '-' }}</td>
+                                    <td>{{ $menu->label ?? '-' }}</td>
 
-                                        <td>{{ $menu->url }}</td>
+                                    <td>{{ $menu->url }}</td>
 
-                                        <td>
-                                            @if($menu->type === 'menu')
-                                                <span class="badge badge-primary">Main Menu</span>
-                                            @else
-                                                <span class="badge badge-info">Sub Menu</span>
-                                            @endif
-                                        </td>
+                                    <td>
+                                        @if($menu->type === 'menu')
+                                        <span class="badge badge-primary">Main Menu</span>
+                                        @else
+                                        <span class="badge badge-info">Sub Menu</span>
+                                        @endif
+                                    </td>
 
-                                        <td>
-                                            {{ $menu->parent?->title ?? '-' }}
-                                        </td>
+                                    <td>
+                                        {{ $menu->parent?->title ?? '-' }}
+                                    </td>
 
 
-                                       <td class="text-center">
-                                            <div class="d-flex justify-content-center align-items-center gap-2">
-                                                <a href="{{ route('header.edit', $menu->id) }}"
+                                    <td class="text-center">
+                                        <div class="d-flex justify-content-center align-items-center gap-2">
+                                            <a href="{{ route('header.edit', $menu->id) }}"
                                                 class="btn btn-sm btn-primary">
-                                                    Edit
-                                                </a>
+                                                Edit
+                                            </a>
 
-                                                <form action="{{ route('header.delete', $menu->id) }}"
-                                                    method="POST"
-                                                    onsubmit="return confirm('Delete this menu?')">
-                                                    @csrf
-                                                    @method('DELETE')
+                                            <form action="{{ route('header.delete', $menu->id) }}"
+                                                method="POST"
+                                                onsubmit="return confirm('Delete this menu?')">
+                                                @csrf
+                                                @method('DELETE')
 
-                                                    <button type="submit" class="btn btn-sm btn-danger">
-                                                        Delete
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
+                                                <button type="submit" class="btn btn-sm btn-danger">
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
 
-                                    </tr>
+                                </tr>
                                 @empty
-                                    <tr>
-                                        <td colspan="8" class="text-center">
-                                            No header menus found
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="8" class="text-center">
+                                        No header menus found
+                                    </td>
+                                </tr>
                                 @endforelse
                             </tbody>
                         </table>
@@ -112,4 +116,5 @@
     </div>
 </div>
 </body>
+
 </html>

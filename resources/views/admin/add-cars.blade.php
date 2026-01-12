@@ -7,17 +7,21 @@
         @include('master.navbar')
 
         <style>
-            .mt-4, .my-4 {
+            .mt-4,
+            .my-4 {
                 margin-top: 5.5rem !important;
             }
+
             .form-section {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
+
             .form-group {
                 width: 100%;
             }
+
             .btn-container {
                 margin-top: 20px;
                 text-align: center;
@@ -26,9 +30,9 @@
 
         <div class="content">
             @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
             @endif
 
             <div class="card">
@@ -127,8 +131,7 @@
                                             id="imagePreview"
                                             src="{{ asset('images/uploader.jfif') }}"
                                             alt="Car Image Preview"
-                                            style="width:100%; max-height:180px; object-fit:contain; margin-bottom:10px;"
-                                        >
+                                            style="width:100%; max-height:180px; object-fit:contain; margin-bottom:10px;">
 
                                         <input
                                             type="file"
@@ -136,8 +139,7 @@
                                             id="image"
                                             name="image"
                                             accept="image/*"
-                                            onchange="previewImage(event)"
-                                        >
+                                            onchange="previewImage(event)">
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +163,7 @@
         <script>
             function previewImage(event) {
                 const reader = new FileReader();
-                reader.onload = function () {
+                reader.onload = function() {
                     document.getElementById('imagePreview').src = reader.result;
                 };
                 reader.readAsDataURL(event.target.files[0]);
@@ -171,4 +173,5 @@
     </div>
 </div>
 </body>
+
 </html>

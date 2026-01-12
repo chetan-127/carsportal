@@ -7,17 +7,21 @@
         @include('master.navbar')
 
         <style>
-            .mt-4, .my-4 {
+            .mt-4,
+            .my-4 {
                 margin-top: 5.5rem !important;
             }
+
             .form-section {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
+
             .form-group {
                 width: 100%;
             }
+
             .btn-container {
                 margin-top: 20px;
                 text-align: center;
@@ -26,9 +30,9 @@
 
         <div class="content">
             @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
             @endif
 
             <div class="card">
@@ -50,8 +54,7 @@
                                         id="title"
                                         name="title"
                                         placeholder="Dashboard"
-                                        required
-                                    >
+                                        required>
                                 </div>
                             </div>
 
@@ -63,8 +66,7 @@
                                         class="form-control"
                                         id="label"
                                         name="label"
-                                        placeholder="Dashboard Menu"
-                                    >
+                                        placeholder="Dashboard Menu">
                                 </div>
                             </div>
                         </div>
@@ -79,8 +81,7 @@
                                         id="url"
                                         name="url"
                                         placeholder="/dashboard"
-                                        required
-                                    >
+                                        required>
                                 </div>
                             </div>
 
@@ -92,8 +93,7 @@
                                         id="type"
                                         name="type"
                                         required
-                                        onchange="toggleMainMenu(this.value)"
-                                    >
+                                        onchange="toggleMainMenu(this.value)">
                                         <option value="">Select Type</option>
                                         <option value="menu">Main Menu</option>
                                         <option value="sub-menu">Sub Menu</option>
@@ -106,12 +106,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="main_menu_id">Main Menu</label>
-                                    <select class="form-control" id="main_menu_id"  name="main_menu_id">
+                                    <select class="form-control" id="main_menu_id" name="main_menu_id">
                                         <option value="">Select Main Menu</option>
                                         @foreach($mainMenus as $menu)
-                                            <option value="{{ $menu->id }}">
-                                                {{ $menu->title }}
-                                            </option>
+                                        <option value="{{ $menu->id }}">
+                                            {{ $menu->title }}
+                                        </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -143,4 +143,5 @@
 </script>
 
 </body>
+
 </html>

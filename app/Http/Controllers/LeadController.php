@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use App\Models\LeadResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class LeadController extends Controller             
+class LeadController extends Controller
 {
 
     public function showForm()
@@ -55,5 +56,4 @@ class LeadController extends Controller
 
         return view('admin.lead-manager', compact('leads'));
     }
-
 }

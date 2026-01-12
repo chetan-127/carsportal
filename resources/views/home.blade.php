@@ -81,6 +81,7 @@
             .car-card img {
                 height: 140px;
             }
+
             .car-type {
                 font-size: 14px;
             }

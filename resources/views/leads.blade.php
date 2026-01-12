@@ -23,9 +23,9 @@
             <div class="form-wrapper" style=" font-family: Arial, sans-serif;">
 
                 @if(session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
                 @endif
                 <form action="{{ route('car-form.submit') }}" method="POST" class="form-inline">
                     @csrf
